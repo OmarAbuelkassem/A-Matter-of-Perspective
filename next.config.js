@@ -62,9 +62,7 @@ const unoptimized = process.env.UNOPTIMIZED ? true : undefined
  * @type {import('next/dist/next-server/server/config').NextConfig}
  **/
 module.exports = () => {
-  const isProd = process.env.NODE_ENV === 'production'
-
-  const repoName = isProd ? '/A-Matter-of-Perspective' : ''
+  const repoName = '/A-Matter-of-Perspective'
 
   const plugins = [withContentlayer, withBundleAnalyzer]
   return plugins.reduce((acc, next) => next(acc), {
