@@ -26,13 +26,24 @@ jobs:
           cache: npm
       - id: configurepages
         uses: actions/configure-pages@v5
-      - name: Restore cache
+      # 1. Cache the entire node_modules directory to skip downloading packages on unchanged pushes
+      - name: Cache Node Modules
+        uses: actions/cache@v4
+        with:
+          path: node_modules
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
+
+      # 2. Cache Next.js compilation layers (optimized to track markdown/content updates too)
+      - name: Cache Next.js Build
         uses: actions/cache@v4
         with:
           path: .next/cache
-          key: ${{ runner.os }}-nextjs-${{ hashFiles('**/package-lock.json') }}-${{ hashFiles('**.[jt]s', '**.[jt]sx') }}
+          key: ${{ runner.os }}-nextjs-${{ hashFiles('**/package-lock.json') }}-${{ hashFiles('**.[jt]s', '**.[jt]sx', '**/content/**/*.md*') }}
           restore-keys: |
             ${{ runner.os }}-nextjs-${{ hashFiles('**/package-lock.json') }}-
+            ${{ runner.os }}-nextjs-
       - run: npm ci --legacy-peer-deps
       - run: npm run build
         env:
