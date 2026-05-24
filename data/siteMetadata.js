@@ -3,7 +3,7 @@ const siteMetadata = {
   title: 'Personal Blog',
   author: 'Omar Abu al-Qassem',
   headerTitle: 'A Matter of Perspective',
-  description: 'A blog created with Next.js and Tailwind.css',
+  description: 'Feel free to look around!',
   language: 'en-us',
   theme: 'system', // system, dark or light
   siteUrl: 'https://tailwind-nextjs-starter-blog.vercel.app',
@@ -11,7 +11,7 @@ const siteMetadata = {
   siteLogo: `${process.env.BASE_PATH || ''}/static/images/logo.png`,
   socialBanner: `${process.env.BASE_PATH || ''}/static/images/twitter-card.png`,
   mastodon: 'https://mastodon.social/@mastodonuser',
-  email: 'address@yoursite.com',
+  email: 'omarabuelkassem@gmail.com',
   github: 'https://github.com',
   x: 'https://twitter.com/x',
   // twitter: 'https://twitter.com/Twitter',
