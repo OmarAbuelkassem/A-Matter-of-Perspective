@@ -7,20 +7,22 @@ interface Project {
 
 const projectsData: Project[] = [
   {
-    title: 'A Search Engine',
-    description: `What if you could look up any information in the world? Webpages, images, videos
-    and more. Google has many features to help you find exactly what you're looking
-    for.`,
-    imgSrc: '/static/images/google.png',
-    href: 'https://www.google.com',
+    title: 'Optical Character Recognition',
+    description: `A high-performance, containerized Full-Stack application designed for real-time text extraction from images. This project features an automated CI/CD Pipeline (Continuous Integration & Delivery) that builds, optimizes, and pushes production-ready images to Docker Hub.`,
+    imgSrc: '/static/images/ocr.png',
+    href: 'https://github.com/OmarAbuelkassem/Image-Processing-OCR',
   },
   {
-    title: 'The Time Machine',
-    description: `Imagine being able to travel back in time or to the future. Simple turn the knob
-    to the desired date and press "Go". No more worrying about lost keys or
-    forgotten headphones with this simple yet affordable solution.`,
-    imgSrc: '/static/images/time-machine.jpg',
-    href: '/blog/the-time-machine',
+    title: 'Group Chat (Real-Time)',
+    description: `A lightweight, event-driven chat engine optimized for low-resource environments.`,
+    imgSrc: '/static/images/chat.png',
+    href: 'https://github.com/OmarAbuelkassem/Group-Chat',
+  },
+  {
+    title: 'SecureAuth',
+    description: `A lightweight Identity Provider (IdP) focused on secure authentication and minimalist design.`,
+    imgSrc: '/static/images/auth.png',
+    href: 'https://github.com/OmarAbuelkassem/IdP',
   },
 ]
 
